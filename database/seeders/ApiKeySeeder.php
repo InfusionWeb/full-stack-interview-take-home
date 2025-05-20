@@ -4,19 +4,15 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Database\Seeders\ApiKeySeeder;
-use Database\Seeders\SubmissionSeeder;
+use App\Models\ApiKey;
 
-class DatabaseSeeder extends Seeder
+class ApiKeySeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $this->call([
-            ApiKeySeeder::class,
-            SubmissionSeeder::class,
-        ]);
+        ApiKey::factory()->create();
     }
 }
