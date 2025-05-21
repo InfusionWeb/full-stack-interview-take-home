@@ -20,6 +20,7 @@ class ValidateApiKey
         if (!$apiKey) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
+        $apiKey->updateUsedAt();
 
         return $next($request);
     }

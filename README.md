@@ -1,61 +1,85 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Contact Submission API Challenge
 
-## About Laravel
+Thank you for taking the time to complete this challenge! The goal is to assess your understanding of PHP, Laravel, RESTful API design, middleware, validation, database relationships. It's also ment to assess your ability to write accessible and mobile friendly HTML / CSS.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+We want to see how you think and how you approach full stack tasks. We've set up a good starting point so you shouldn't have to do much if any boiler plate work.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## The Task
+The marketing team needs a landing page built out that can accept form submissions. These submissions will be managed by an internal admin system built by a different team. The issue is that this admin system is a simple UI with no real backend. It gets all it's data fed to it via API requests from other systems. So your task is to build out the landing page a CRUD API to manage these submissions.
 
-## Learning Laravel
+## Requirements to run this project
+- PHP 8.2+
+- Composer
+- Node v20+
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Installation
+1) Create a new project using this repo as a "template"
+1) Clone your new project
+1) In the root of your project run:
+	1) `composer install`
+	1) `npm install`
+	1) `php artisan migrate --seed`
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+#### Using Vue
+In order to enable Vue on the sample project do this:
+1) in the `vite.config.js` file, uncomment line 23
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#### Using React
+In order to enable React on the sample project do this:
+1) In the `vite.config.js` file, uncomment line 26
+1) In the `welcome.blade.php` file, uncomment lines 14 & 17
+1) In the same welcome file, comment out line 20
 
-## Laravel Sponsors
+#### Using Vanilla JS
+Not much you need to do extra to use vanilla js. Should work out of the box.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Running the project
+1) Open terminal and run `php artisan serve`
+1) Open another terminal and run `npm run build && npm run dev`
+1) In your browser navigate to https://127.0.0.1:8000
+	- You should see `Hello!`
 
-### Premium Partners
+## Requirements
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Backend (Laravel)
+- Add the new "Submissions" API routes
+  - Create a submission
+  - List all submissions
+  - Get a single submission
+  - Update a submission
+  - Delete a submission
+ - Update the `SubmissionsController.php` to handle the new endpoints
+ - Documentation of the API contract
+ - Come up with suggestions on how we can improve API security
+ - Bonus: Update the `ValidateApiKey.php` file to update the `last_used_at` column in the api_keys table for a given key.
 
-## Contributing
+### Frontend
+The landing page should be mobile friendly and pass basic accessibility checks using the `WAVE Evaluation Tool` chrome extension. You can use any Javascript framework you would like. To make things easy we've added the starting points for Vue, React and Vanilla JS.
+- Build out the Landing page based on the given Figma design.
+	- You should have gotten the figma link with the link to this project
+- Add some basic form validation
+	- Ensure that an email is an email
+	- No empty fields
+	- etc
+- Fetch a list of "Departments" from `/api/departments` and populate the department dropdown
+- Ensure the user experience is pleasent when submitting a form or getting error messages
+- Ensure the page is mobile friendly
+- Ensure the page is accessible
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Deliverables
+- A public or private git repo with a final working project. (Github, Gitlab, Bitbucket all work)
+	- Something we can clone, set up and test
+	- If it's a private repo please work with the recruiter to invite one of our devs
+- A working, mobile friendly, accessible landing page that accepts new submissions.
+- A efficient API that allows external systems to access resources with a given API key.
 
-## Code of Conduct
+## Time Expectations
+This challenge is designed to be completed in **4-6 hours** of focused work. Please don't overthink or overbuild — we're evaluating practical implementation, not a production-ready app. We're also not expecting any tests. If you want to write tests thats great, we have Pest installed just in case.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Thank You
+We appreciate your time and effort. If anything is unclear, feel free to document assumptions — that’s just as valuable as asking.
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Good luck!

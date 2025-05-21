@@ -13,6 +13,6 @@ class SubmissionSeeder extends Seeder
      */
     public function run(): void
     {
-        Submission::factory(50)->create();
+        Submission::factory(600)->create();
     }
 }
