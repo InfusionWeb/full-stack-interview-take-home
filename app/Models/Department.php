@@ -11,6 +11,10 @@ class Department extends Model
     /** @use HasFactory<\Database\Factories\DepartmentFactory> */
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+    ];
+
     public function submissions()
     {
         return $this->hasMany(Submission::class);

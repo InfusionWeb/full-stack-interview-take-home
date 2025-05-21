@@ -17,7 +17,8 @@ class ApiKeyFactory extends Factory
     public function definition(): array
     {
         return [
-            'key' => bin2hex(random_bytes(32)),
+            // 'key' => bin2hex(random_bytes(32)),
+            'key' => '4fbac20c153d325a40fb8384f2d2a02268e1ee70cc782e2962cb23a8d4b4c710',
         ];
     }
 }
