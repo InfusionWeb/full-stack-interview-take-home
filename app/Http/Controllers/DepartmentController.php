@@ -88,6 +88,23 @@ class DepartmentController extends Controller
      */
     public function destroy(Department $department)
     {
-        // Please implement the logic to delete the department
+        try {
+            $deleted = $department->delete();
+
+            if (!$deleted) {
+                return response()->json([
+                    'message' => 'Delete failed. Department may not have changed.',
+                ], 500);
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'message' => 'An error occurred while deleting the department.',
+                ...(env('APP_ENV') === 'local' ? ['errors' => [$e->getMessage()]] : []),
+            ], 500);
+        }
+
+        return response()->json([
+            'message' => 'Department deleted successfully.',
+        ], 200);
     }
 }
