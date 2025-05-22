@@ -10,11 +10,19 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/css/app.css',
+                // Comment the following line if you want to use Vue
                 'resources/js/app.js',
+                // Uncomment the following line if you want to use React
+                // 'resources/js/app.jsx',
             ],
             refresh: true,
         }),
         tailwindcss(),
-        vue({template: {transformAssetUrls: {base: null,includeAbsolute: false}}}),
+
+        // Uncomment the following line if you want to use Vue
+        // vue({template: {transformAssetUrls: {base: null,includeAbsolute: false}}}),
+
+        // Uncomment the following line if you want to use React
+        // react(),
     ],
 });
