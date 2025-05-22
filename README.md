@@ -171,7 +171,7 @@ You can use any Javascript framework you would like. To make things easy we've a
 - A efficient API that allows external systems to access resources secured by a bearer token.
 
 ## Time Expectations
-This challenge is designed to be completed in **4-6 hours** of focused work. Please don't overthink or overbuild — we're evaluating practical implementation, not a production-ready app. We're also not expecting any tests.
+This challenge is designed to be completed in a few hours of focused work. Please don't overthink or overbuild — we're evaluating practical implementation, not a production-ready app. We're also not expecting any tests.
 
 ## Thank You
 We appreciate your time and effort. If anything is unclear, feel free to document assumptions — that’s just as valuable as asking.
