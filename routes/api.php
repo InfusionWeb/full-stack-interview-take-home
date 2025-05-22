@@ -12,15 +12,10 @@ Route::prefix('departments')->group(function () {
     Route::delete('/{department}', [DepartmentController::class, 'destroy'])->middleware('auth.api');
 });
 
-// Please implement the submission routes
-
-// Create a new submission
-    // Post: /api/submissions
-// List all submissions
-    // Get: /api/submissions
-// Show a specific submission
-    // Get: /api/submissions/{submission}
-// Update a specific submission
-    // Patch: /api/submissions/{submission}
-// Delete a specific submission
-    // Delete: /api/submissions/{submission}
+Route::prefix('submissions')->group(function () {
+    // TODO: Add a route to get all submissions
+    Route::post('/', [SubmissionController::class, 'store']);
+    Route::get('/{submission}', [SubmissionController::class, 'show'])->middleware('auth.api');
+    Route::patch('/{submission}', [SubmissionController::class, 'update'])->middleware('auth.api');
+    Route::delete('/{submission}', [SubmissionController::class, 'destroy'])->middleware('auth.api');
+});

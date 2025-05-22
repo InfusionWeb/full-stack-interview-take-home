@@ -15,6 +15,11 @@ class Department extends Model
         'name',
     ];
 
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
     public function submissions()
     {
         return $this->hasMany(Submission::class);
