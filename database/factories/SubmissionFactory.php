@@ -22,7 +22,8 @@ class SubmissionFactory extends Factory
         $updatedAt = fake()->dateTimeBetween($createdAt, now());
 
         return [
-            'name' => fake()->name(),
+            'first_name' => fake()->firstName(),
+            'last_name' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
             'message' => fake()->paragraph(),
             'submitted_at' => $createdAt,
