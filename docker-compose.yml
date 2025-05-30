@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laravel_app
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8080:80"
+    networks:
+      - laravel
+    environment:
+      - COMPOSER_ALLOW_SUPERUSER=1
+
+networks:
+  laravel:
+    driver: bridge
