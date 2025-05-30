@@ -20,10 +20,11 @@ The marketing team needs a landing page built out that can accept form submissio
 - Postman (optional, but recommended)
 
 ## Installation
-1) Download the provided project zip file
-1) Unzip the project wherever you would like
+1) Either download the [zip file](https://github.com/InfusionWeb/full-stack-interview-take-home/archive/refs/heads/master.zip) or use [this repo](https://github.com/InfusionWeb/full-stack-interview-take-home/tree/master) as a template to create your own repo
+  - If you use the zip file, please ensure you unzip it before continuing
+  - If you use the repo as a template, please ensure you clone it to your local machine
 1) Open terminal or command line
-1) `cd` into the unziped folder
+1) `cd` into the project folder
 1) In the root of your project run:
 	1) `docker compose up --build`
   - Note: This will install composer, your .env file as well as run the database migrations and seeders. If you would like refresh your database you can run `docker compose exec app php artisan migrate:fresh --seed` to reset the database and seed it again.
