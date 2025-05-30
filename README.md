@@ -19,8 +19,10 @@ The marketing team needs a landing page built out that can accept form submissio
 - Node v20+
 
 ## Installation
-1) Create a new project using this repo as a "template"
-1) Clone your new project
+1) Download the provided project zip file
+1) Unzip the project to whever you would like
+1) Open terminal or command line
+1) `cd` into the unziped folder
 1) In the root of your project run:
 	1) `composer install`
 	1) `npm install`
