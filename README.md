@@ -6,7 +6,8 @@ We want to see how you think and how you approach full stack tasks. We've set up
 
 ## Resources
 - [Laravel Docs](https://laravel.com/docs)
-- [Postman Collection](https://assets.thryv.com/static/downloads/Full%20Stack%20Interview%20Challenge.postman_collection.json)
+- We included a postman collection in the root of this project called `api.postman_collection.json`. You can import this into Postman to test the API endpoints.
+- [Tailwind CSS](https://tailwindcss.com/docs)
 
 ---
 
@@ -14,20 +15,20 @@ We want to see how you think and how you approach full stack tasks. We've set up
 The marketing team needs a landing page built out that can accept form submissions. These submissions will be managed by an internal admin system built by a different team. The issue is that this admin system is a simple UI with no real backend. It gets all it's data fed to it via API requests from other systems. So your task is to build out the landing page a CRUD API to manage these submissions.
 
 ## Requirements to run this project
-- PHP 8.2+
-- Composer
+- Docker
 - Node v20+
+- Postman (optional, but recommended)
 
 ## Installation
 1) Download the provided project zip file
-1) Unzip the project to whever you would like
+1) Unzip the project wherever you would like
 1) Open terminal or command line
 1) `cd` into the unziped folder
 1) In the root of your project run:
-	1) `composer install`
+	1) `docker compose up --build`
+  - Note: This will install composer, your .env file as well as run the database migrations and seeders. If you would like refresh your database you can run `docker compose exec app php artisan migrate:fresh --seed` to reset the database and seed it again.
+1) Open a new terminal to the root of the project and run:
 	1) `npm install`
-	1) `php artisan migrate --seed`
-    - If you want to refresh the database, run `php artisan migrate:fresh --seed`
 
 #### Using Vue
 In order to enable Vue on the sample project do this:
@@ -43,9 +44,12 @@ In order to enable React on the sample project do this:
 Not much you need to do extra to use vanilla js. Should work out of the box.
 
 ## Running the project
-1) Open terminal and run `php artisan serve`
+1) Ensure you have completed the installation steps above
+1) Navigate to the root of the project in your terminal
+1) Open terminal and run `docker compose up`
+  - This will start the Laravel backend on port 8080
 1) Open another terminal and run `npm run build && npm run dev`
-1) In your browser navigate to https://127.0.0.1:8000
+1) In your browser navigate to `http://localhost:8080`
 	- You should see `Hello!`
 
 ## Requirements
@@ -53,7 +57,7 @@ Not much you need to do extra to use vanilla js. Should work out of the box.
 ### Backend (Laravel)
 - Create some kind of API validation to validate a bearer token passed via the `Authorization` header
   - The endpoints that need the validation logic have a `// TODO: Add Bearer token auth` comment on them
-      - This doesnt need to be overly complex 
+      - This doesnt need to be overly complex
   - There's a model called `ApiKey`. With this model you can fetch the token with `\App\Models\ApiKey::first()`
   - For your reference, the `api_keys` table gets populated with a seeder. You can find the seeder in `database/seeders/ApiKeySeeder.php`.
     - The key is `4fbac20c153d325a40fb8384f2d2a02268e1ee70cc782e2962cb23a8d4b4c710` and should be passed to the `Authorization` header as `Bearer 4fbac20c153d325a40fb8384f2d2a02268e1ee70cc782e2962cb23a8d4b4c710`
@@ -81,14 +85,14 @@ You can use any Javascript framework you would like. To make things easy we've a
 ## Deliverables
 - A public or private git repo with a final working project. (Github, Gitlab, Bitbucket all work)
 	- Something we can clone, set up and test
-	- If it's a private repo please work with the recruiter to invite one of our devs    
-- A working, mobile friendly, accessible landing page that accepts new submissions.
+	- If it's a private repo please work with the recruiter to invite one of our devs
+- A working, mobile friendly and accessible landing page that accepts new submissions.
 - A efficient API that allows external systems to access resources secured by a bearer token.
 
 ## Time Expectations
-This challenge is designed to be completed in 3-5 hours of focused work. Please don't overthink or overbuild — we're evaluating practical implementation, not a production-ready app. We're also not expecting any tests.
+This challenge is designed to be completed in 3-5 hours of focused work. Please don't overthink or overbuild, we're evaluating practical implementation, not a production-ready app. We're also not expecting any tests.
 
 ## Thank You
-We appreciate your time and effort. If anything is unclear, feel free to document assumptions — that’s just as valuable as asking.
+We appreciate your time and effort. If anything is unclear, feel free to document assumptions, that’s just as valuable as asking.
 
 Good luck!
